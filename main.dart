@@ -1,5 +1,5 @@
-// Assignmnent=3
-//  Question=1
+// // Assignmnent=3
+// //  Question=1
 
 // void main(){
 
@@ -9,9 +9,9 @@
 // }
 
 
-// Question=2 Creat an empty list of days and add 7days
+// // Question=2 Creat an empty list of days and add 7days
 
-// void main(){
+// // void main(){
 
 //   List<String> days =[];
 
@@ -245,7 +245,7 @@
 // }
   
 
-  // Question=12  Reverse list without changing orignal
+//   Question=12  Reverse list without changing orignal
 
 // void main() {
   
@@ -323,28 +323,28 @@
 
 // Question=18  Student and over 18
 
-void main (){
+// void main (){
 
-Map<String, dynamic> students = {
+// Map<String, dynamic> students = {
 
-  "name": "Ali",
+//   "name": "Ali",
 
-  "age": 25,
+//   "age": 25,
 
-  "isStudent": true
+//   "isStudent": true
 
-};
+// };
 
-if (students["isStudent"] == true && students["age"] > 18) {
+// if (students["isStudent"] == true && students["age"] > 18) {
 
-  print("Eligible");
-}
+//   print("Eligible");
+// }
 
- else {
+//  else {
 
-  print("Not eligible");
- };
-}
+//   print("Not eligible");
+//  };
+// }
 
 
 // Question=19  Product in stock
@@ -377,6 +377,7 @@ if (students["isStudent"] == true && students["age"] > 18) {
 // void main() {
   
 //   Map<String, dynamic> car = {
+
 //     'brand': "Toyota",
 
 //     "color": "red",
@@ -387,10 +388,59 @@ if (students["isStudent"] == true && students["age"] > 18) {
 
 //   if (car["is sedan"] == true && car["color"] == "red") {
     
-//     print("The car is a red sedan");
+//     print(" Match");
 
 //   } else {
 
-//     print("The car is not a red sedan");
+//     print("No match");
 //   }
 // }
+
+
+// question=21  Check active admin
+
+// void main() {
+  
+//   Map<String, dynamic> user = {
+
+//     "name": "Ali",
+
+//     "isAdmin": true,
+
+//     "isActive": true
+//   };
+
+//   if (user["isAdmin"] == true && user["isActive"] == true) {
+
+//     print("User is an Active admin");
+
+//   } else {
+
+//     print("User is not an Active admin");
+//   }
+// }
+
+
+// //  QUESTION=22  Check if Apple exist
+
+void main() {
+  
+  Map<String, int> cart = {
+    "Apple": 5,
+    "Banana": 10,
+    
+    "Mango": 12
+  };
+  
+  if (cart.containsKey("Apple")) {
+    
+    print("product found");
+  
+  } else {
+    
+    print("product not found");
+  }
+}
+
+
+
