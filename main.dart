@@ -1,446 +1,258 @@
-// // Assignmnent=3
-// //  Question=1
 
-// void main(){
 
-// List<String> names = ['Hamza', 'Ali', 'Umar', 'john', 'ben'];
+// Assignment  04
+// Question 1: Print numbers from 1 to 10
+void main (){
+for (int i = 1; i <= 10; i++) {
+  print(i);
+}
+}
 
-// print(names);
-// }
 
 
-// // Question=2 Creat an empty list of days and add 7days
-
-// // void main(){
-
-//   List<String> days =[];
-
-// days.add('Monday');
-
-// days.add('Tuesday');
-
-// days.add('Wednesday');
-
-// days.add('Thursday');
-
-// days.add('Friday');
-
-// days.add('Saturday');
-
-// days.add('Sunday');
-
-// print(days);
-// }
-
-
-// Question=3   Creat a list of days and remove
-
-// void main(){
-
-//   List<String> days =[
-
-//   'Monday',
-
-//   'Tuesday',
-
-//   'Wednesday',
-
-//   'Thursday',
-
-//   'Friday',
-
-//   'Saturday',
-
-//   'Sunday'];
-
-//   while(days.isNotEmpty){
-
-//     print(days.removeLast());
-//   }
-// }
-  
-
-// Question=4    Creat a list of numbers and find the smallest and largest number
-
-// void main(){
-
-//   List<int> numbers =[10,5,25,3,50,8];
-  
-
-// int smallest = numbers[0];
-
-// int largest = numbers[0];
-
-// for(int number in numbers) {
-
-//   if(number < smallest) {
-
-//     smallest = number;
-//   }
-//   if(number > largest){
-
-//     largest = number;
-//   }
-// }
-
-// print('Smallest number: $smallest');
-
-// print('Largest number: $largest');
-// }
-
-
-// Question=5 Map + find keys with length 4
-
-// void main() {
-  
-// Map<String, int> contacts = {
-
-//   'Ali': 9505,
-
-//   'Hamza': 9056,
-
-//   'Umar': 7867,
-
-//   'John': 9290,
-
-//   'Ben': 8808
-// };
-
-// var keys =contacts.keys.where((key) => key.length == 4);
-
-// print(keys);
-// }
-
-
-// Question=6  Nested countries Map 
-
-// void main() {
-
-// Map<String, dynamic > world ={
-
-// "countries": {
-
-//   "Pakistan": {
-
-//     "capital": "Islamabad",
-
-//     "currency": "PKR",
-
-//     "language": "Urdu"
-//   },
-
-//   "India": {
-
-//     "capital": "delhi",
-
-//     "currency1": "Rupee",
-
-//     "language": "Hindi"
-//   },
-//  }
-// };
-
-// print(world["countries"]["Pakistan"]["capital"]);
-
-// print(world["countries"]["Pakistan"]["currency"]);
-
-// }
-
-
-// Question=7  Check fri in expences
-
-// void main() {
-  
-//   Map<String, double> expenses = {
-
-//     'sun': 3000.0,
-
-//     'mon': 3000.0,
-
-//     'tue': 3234.0, 
-//   };
-
-//   if (expenses.containsKey('fri')) {
-
-//    print(true);
-
-//   } else {
-
-//     expenses["fri"] = 5000.0;
-//   }
-
-// print (expenses);
-// }
-
-
-// Question=8  Remove false value
-
-// void main() {
-  
-// List<Map<String, dynamic>>
-
-// usersEligibility = [
-
-//   {'name': 'Ali', 'Eligible': true},
-
-//   {'name': 'Hamza', 'Eligible': false},
-
-//   {'name': 'Umar', 'Eligible': true},
-
-//   {'name': 'John', 'Eligible': true},
-
-//   {'name': 'Ben', 'Eligible': false}
-  
-// ];
-
-// usersEligibility.removeWhere((user) => user["Eligible"] == false);
-
-// print(usersEligibility);
-// }
-
-
-// QUESTION=9  Maximum value
-
-// void main() {
-  
-//   List<int> numbers =[10,25,5,40,15];
-
-// int maximum = numbers[0]; 
-
-// for(int number in numbers) {
-
-//   if(number > maximum) {
-
-//     maximum = number;
-//   }
-// }
-
-// print("Maximum : $maximum");
-// }
-
-
-// Question=10  Remove duplicates string
-
-// void main() {
-  
-//   List<String> names = ['Ali', 'Hamza', 'Umar', 'John', 'Ben', 'Ali', 'Hamza'];
-  
-//   List<String> uniqueNames = names.toSet().toList();
-  
-//   print(uniqueNames);
-// }
-
-
-// Question=11  find n elements 
-
-// void main() {
-  
-//   List<int> numbers =[10,25,5,40,15];
-  
-//   int n = 3; 
-  
-//   List<int> result = numbers.take(n).toList();
-  
-//   print("result: $result");
-// }
-  
-
-//   Question=12  Reverse list without changing orignal
-
-// void main() {
-  
-//   List<String> names =['Ali', 'Hamza', 'Umar', 'John', 'Ben'];
-  
-//   List<String> reversedNames = names.reversed.toList();
-  
-//   print(reversedNames);
-
-//   print(names);
-// }
-
-
-// Question=13  Unique integer list
-
-// void main() {
-  
-//   List<int> numbers = [1, 2, 3, 4, 5, 1, 2, 3];
-  
-//   List<int> uniqueNumbers = numbers.toSet().toList();
-  
-//   print(uniqueNumbers);
-// }
-
-
-// Question=14  Sort ascending without changing original
-
-// void main (){
-  
-//   List<int> numbers = [5, 2, 8, 1, 4];
-  
-//   List<int> sortedNumbers = List.from(numbers)..sort();
-
-//   print(sortedNumbers);
-  
-//   print(numbers);
-// }
-
-
-// Question=15  Filter positive numbers using where
-
-//  void main() {
-  
-//   List<int> numbers = [-5, 2, -8, 1, 4];
-  
-//   List<int> positiveNumbers = numbers.where((number) => number > 0).toList();
-  
-//   print(positiveNumbers);
-//   }
-
-
-// Question=16  Filter even numbers using where
-
-// void main() {
-  
-//   List<int> numbers = [1, 2, 3, 4, 5, 6];
-  
-//   List<int> evenNumbers = numbers.where((number) => number % 2 == 0).toList();
-  
-//   print(evenNumbers);
-// }
-
-
-// Question=17  Square of numbers using map
-
-//  void main() {
-  
-//   List<int> numbers = [1, 2, 3, 4, 5];
-  
-//   List<int> squaredNumbers = numbers.map((number) => number * number).toList();
-  
-//   print(squaredNumbers);
-//  }
-
-
-// Question=18  Student and over 18
-
-// void main (){
-
-// Map<String, dynamic> students = {
-
-//   "name": "Ali",
-
-//   "age": 25,
-
-//   "isStudent": true
-
-// };
-
-// if (students["isStudent"] == true && students["age"] > 18) {
-
-//   print("Eligible");
-// }
-
-//  else {
-
-//   print("Not eligible");
-//  };
-// }
-
-
-// Question=19  Product in stock
-
-// void main() {
-  
-//   Map<String, dynamic> product = {
-
-//     "name": "Laptop",
-
-//     "price": 50000,
-
-//     "quantity": 5
-
-//   };
-
-//   if (product["quantity"] > 0) {
-
-//     print("Product in stocks ");
-
-//   } else {
-
-//     print("Product out of stock");
-//   }
-// }
-
-
-// Question=20 Car is red sedan
-
-// void main() {
-  
-//   Map<String, dynamic> car = {
-
-//     'brand': "Toyota",
-
-//     "color": "red",
-
-//     "is sedan": true,
-
-//   };
-
-//   if (car["is sedan"] == true && car["color"] == "red") {
-    
-//     print(" Match");
-
-//   } else {
-
-//     print("No match");
-//   }
-// }
-
-
-// question=21  Check active admin
-
-// void main() {
-  
-//   Map<String, dynamic> user = {
-
-//     "name": "Ali",
-
-//     "isAdmin": true,
-
-//     "isActive": true
-//   };
-
-//   if (user["isAdmin"] == true && user["isActive"] == true) {
-
-//     print("User is an Active admin");
-
-//   } else {
-
-//     print("User is not an Active admin");
-//   }
-// }
-
-
-// //  QUESTION=22  Check if Apple exist
-
+// Question 2: Creat a list of 5 names and print all names using loop
 void main() {
-  
-  Map<String, int> cart = {
-    "Apple": 5,
-    "Banana": 10,
-    
-    "Mango": 12
-  };
-  
-  if (cart.containsKey("Apple")) {
-    
-    print("product found");
-  
-  } else {
-    
-    print("product not found");
+  List<String> names = ['Ali', 'Ahmed', 'Rafay', 'Dan', 'Eva'];
+  for (String name in names) {
+    print(name);
   }
 }
 
 
+
+// Question 3: Print number from 10 to 1 using a while loop  
+ void main() {
+   int i = 10;
+   while (i >= 1) {
+    print(i);
+     i--;
+   }
+ }
+
+
+
+// Question 4: Take a number from user and print its table up to 10
+import 'dart:io';
+void main() {
+print("Enter a number :");
+  int number = int.parse(stdin.readLineSync()!);
+    for (int i = 1; i <= 10; i++) {
+      print('$number x $i = ${number * i}');
+    }
+  }
+ 
+
+
+//  Question 5: Create a list simple menue that keeps showing until the user chosses exist
+import 'dart:io';
+void main() {
+int choice ;
+do {
+    print("1. Add");
+    print("2. Subtract");
+    print("1. Exit");
+    print("1. Enter your choice");
+choice = int.parse(stdin.readLineSync()!) ;
+if (choice == 1) {
+    print("You selected Add");
+}
+else if (choice == 2) {
+    print("You selected Subtract");
+}
+else if (choice == 3) {
+print("Goodbye!");
+}
+else {
+   print("Invalid choice"); 
+}
+
+} while (choice != 3);
+
+}
+
+
+
+// Question 6: Even Number 1 to 20
+void main (){
+for (int i = 1; i <= 20; i++)  {
+    if (i % 2 == 0) {
+        print (i);
+    }
+  }
+}
+
+
+
+// Question 7: Find the total sum
+void main (){
+List<int> numbers = [10, 20,30,40,50,];
+int sum =0;
+for (int number in numbers ) {
+    sum = sum + number;
+}
+ print("total sum: $sum");
+}
+
+
+
+// Question 8: Print number 1 to 5 using 
+
+void main(){
+int i =1;
+do{
+    print(i);
+    i++;
+}
+while (i<= 5);
+}
+
+ 
+
+// Question 9: Take a number from user and print 
+import 'dart:io';
+void main(){
+    print ("Enter a number:");
+    int number = int.parse(stdin.readLineSync()!);
+int i = 1;
+while (i <= number) {
+    print(i);
+    i++;
+}
+}
+
+
+
+// Question 10: Print all 
+
+void main(){
+List<String> fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes" ];
+for (String fruit in fruits) {
+    print (fruit);
+}
+}
+
+
+
+// Question 11: Table of using while
+void main (){
+int i = 1;
+while (i <= 10) {
+    print ("7 *$i = ${7 * i}");
+    i++;
+}
+}
+
+
+
+// Question 12: Print number 20 to 1
+void main(){
+int i =20;
+do {
+print(i);
+i--;
+}
+while (i >=1);
+}
+
+
+
+// Question 13: Take 5 number from user
+import 'dart:io';
+void main(){
+for (int i =1; i <= 5; i++) {
+    print("Enter number $i:");
+    int number =int.parse(stdin.readLineSync()!);
+    print("You enterd :$number");
+}
+}
+
+
+
+// Question 14: Print mark greater than 50
+void main (){
+List<int> marks = [45,67,32,89,55,40];
+  for (int mark in marks) {
+    if (mark > 50){
+        print(mark);
+    }
+  }
+}
+ 
+
+
+// Question 15: Sum of 1 to 10 using while
+void main(){
+int i = 1;
+int sum = 0;
+while (i <= 10) {
+    sum = sum +i;
+    i++;
+}
+print ("Sum: $sum ");
+}
+
+
+
+// Question 16: Odd number 1 to 15 using do-while
+void main (){
+int i =1;
+do {
+    if (i % 2 != 0) {
+        print (i);
+    }
+    i++;
+}
+while (i <= 15);
+}
+
+
+
+// Question 17: print all cities
+void main(){
+List<String> cities =[
+"Karachi",
+"Lahore",
+"Islamabad",
+"Peshawar",
+"Quetta",
+];
+ for (String city in cities) {
+    print (city);
+ }
+}
+  
+
+
+// Question 18: Table from 1 to 10
+void main(){
+print("Enter a number:");
+int number = int.parse(stdin.readLineSync()!);
+for (int i = 10; i >= 1; i--) {
+    print ("$number * $i = ${number * i}");
+ }
+}
+
+
+
+// Question 19: Keep asking until user enter 0
+import 'dart:io';
+void main(){
+int number = 1;
+while (number != 0){
+    print("Enter a number:");
+      number = int.parse(stdin.readLineSync()!);
+  print("you entered:  $number");
+}
+ print("Program ended.");
+}
+
+
+
+// Question 20: Print Prices with "Rs"
+void main (){
+List<double> prices = [100.0,250.0,500.0,750.0,1000.0,];
+ for (double price in prices) {
+    print("Rs. $price");
+ }
+}
 
