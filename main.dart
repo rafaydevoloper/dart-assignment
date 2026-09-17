@@ -1,258 +1,182 @@
-
-
-// Assignment  04
-// Question 1: Print numbers from 1 to 10
-void main (){
-for (int i = 1; i <= 10; i++) {
-  print(i);
-}
-}
-
-
-
-// Question 2: Creat a list of 5 names and print all names using loop
-void main() {
-  List<String> names = ['Ali', 'Ahmed', 'Rafay', 'Dan', 'Eva'];
-  for (String name in names) {
-    print(name);
-  }
-}
-
-
-
-// Question 3: Print number from 10 to 1 using a while loop  
- void main() {
-   int i = 10;
-   while (i >= 1) {
-    print(i);
-     i--;
-   }
- }
-
-
-
-// Question 4: Take a number from user and print its table up to 10
 import 'dart:io';
-void main() {
-print("Enter a number :");
-  int number = int.parse(stdin.readLineSync()!);
-    for (int i = 1; i <= 10; i++) {
-      print('$number x $i = ${number * i}');
-    }
-  }
- 
 
+void main(){
+Map<String, int> players = {};
 
-//  Question 5: Create a list simple menue that keeps showing until the user chosses exist
-import 'dart:io';
-void main() {
-int choice ;
+int choice = 0;
+
 do {
-    print("1. Add");
-    print("2. Subtract");
-    print("1. Exit");
-    print("1. Enter your choice");
-choice = int.parse(stdin.readLineSync()!) ;
+
+print("\n==============================");
+print("GAME TOURNAMENT MANAGEMENT");
+
+print("==============================");
+
+print( "1. Rigister Player");
+print( "2. View Players");
+print( "3. Search Player");
+print( "4. Add MatchResult");
+print( "5. Leaderboard");
+print( "6. Statistics");
+print( "7. Remove Player");
+print( "8. Exit");
+
+print("==============================");
+print("Enter you choice");
+
+String input = (stdin.readLineSync()!);
+if (int.tryParse(input) == null){
+  print("Please enter a number from 1 to 8.");
+
+continue;
+}
+choice = int.parse(input);
 if (choice == 1) {
-    print("You selected Add");
-}
-else if (choice == 2) {
-    print("You selected Subtract");
-}
-else if (choice == 3) {
-print("Goodbye!");
+  print( " Enter Player name:");
+
+String name = stdin.readLineSync()!;
+
+
+if (name.trim().isEmpty) {
+    print("Player name cannot be empty!");
+  }
+   else if 
+  (players.containsKey(name)) {
+    print("Player already exists!");
 }
 else {
-   print("Invalid choice"); 
+players[name]= 0;
+
+print("Player registered successfully!");
+  }
+  }
+else if (choice == 2){
+  print("\nRegisteredPlayers");
+if (players.isEmpty) {
+   print("No Players Registered yet.");
 }
+else {
+  for (String player in players.keys ) {
 
-} while (choice != 3);
-
-}
-
-
-
-// Question 6: Even Number 1 to 20
-void main (){
-for (int i = 1; i <= 20; i++)  {
-    if (i % 2 == 0) {
-        print (i);
-    }
+     print ("$player - ${players[player]}points");
   }
 }
-
-
-
-// Question 7: Find the total sum
-void main (){
-List<int> numbers = [10, 20,30,40,50,];
-int sum =0;
-for (int number in numbers ) {
-    sum = sum + number;
 }
- print("total sum: $sum");
-}
+else if (choice == 3) {
+   print("\nEnter player name to search:");
 
+   String searchName = stdin.readLineSync()!;
 
+   if(players.containsKey(searchName)){
 
-// Question 8: Print number 1 to 5 using 
+    print("Player found: $searchName");
 
-void main(){
-int i =1;
-do{
-    print(i);
-    i++;
-}
-while (i<= 5);
-}
-
- 
-
-// Question 9: Take a number from user and print 
-import 'dart:io';
-void main(){
-    print ("Enter a number:");
-    int number = int.parse(stdin.readLineSync()!);
-int i = 1;
-while (i <= number) {
-    print(i);
-    i++;
-}
-}
-
-
-
-// Question 10: Print all 
-
-void main(){
-List<String> fruits = ["Apple", "Banana", "Mango", "Orange", "Grapes" ];
-for (String fruit in fruits) {
-    print (fruit);
-}
-}
-
-
-
-// Question 11: Table of using while
-void main (){
-int i = 1;
-while (i <= 10) {
-    print ("7 *$i = ${7 * i}");
-    i++;
-}
-}
-
-
-
-// Question 12: Print number 20 to 1
-void main(){
-int i =20;
-do {
-print(i);
-i--;
-}
-while (i >=1);
-}
-
-
-
-// Question 13: Take 5 number from user
-import 'dart:io';
-void main(){
-for (int i =1; i <= 5; i++) {
-    print("Enter number $i:");
-    int number =int.parse(stdin.readLineSync()!);
-    print("You enterd :$number");
-}
-}
-
-
-
-// Question 14: Print mark greater than 50
-void main (){
-List<int> marks = [45,67,32,89,55,40];
-  for (int mark in marks) {
-    if (mark > 50){
-        print(mark);
+    print("Score: ${players[searchName]}points");
+   }
+   else {
+    print("Player not found.");
     }
+}
+else if (choice == 4) {
+   print("\nEnter player name:");
+
+   String playerName = stdin.readLineSync()!;
+
+
+   if (players.containsKey(playerName)) {
+    print("Enter points:");
+    int points = int.parse(stdin.readLineSync()!);
+    if (points < 0) {
+
+      print ("points cannot be negative!");
+    }
+      else {
+
+        players[playerName] = players[playerName]! + points;
+
+
+        print("Match reasult added!");
+
+        print("New score: ${players[playerName]}points");
+        
+      }
+   }
+
+      else {
+        print ("Player not found.");
+      }
+    
+}
+   else if (choice == 5) {
+   print("\nLEADERBOARD:");
+
+   if (players.isEmpty) {
+
+     print("No Players Registered yet.");
+
+   }
+
+   else {
+    var leaderboard = players.entries.toList();
+
+    leaderboard.sort((a, b) => b.value.compareTo(a.value),);
+    for (int i = 0; i < leaderboard.length; i++ ){
+print("${i+1}.${leaderboard[i].key}- ${leaderboard[i].value}points");
+    }
+   }
+   }
+
+
+   else if (choice == 6)  {
+print("\nSTATISTICS:");
+
+   if (players.isEmpty) {
+
+     print("No Players Registered yet.");
+   }
+     else {
+      int totalPlayers = players.length;
+      int highestScore = players.values.reduce((a, b)=> a > b ? a : b,);
+
+      int totalScore = 0;
+      for (int score in players.values) {
+        totalScore = totalScore + score;
+      }
+      double averageScore = totalScore / totalPlayers;
+      print("Total players: $totalPlayers");
+      print("HighestScore: $highestScore");
+      print("AverageScore: ${averageScore.toStringAsFixed(2)}");
+     }
+   }
+
+   else if (choice == 7) {
+
+    print("\nEnter player name to remove:");
+
+    String playerName = stdin.readLineSync()!;
+
+    if (players.containsKey(playerName)){
+
+      players.remove(playerName);
+
+      print("Player removed successfully!");
+    }
+
+    else {
+
+      print ("player not found.");
+    }
+   }
+
+  else if (choice == 8) {
+  print( " Goodbye!");
   }
-}
- 
+else {
+   print( "This feature is coming soon.");
 
-
-// Question 15: Sum of 1 to 10 using while
-void main(){
-int i = 1;
-int sum = 0;
-while (i <= 10) {
-    sum = sum +i;
-    i++;
 }
-print ("Sum: $sum ");
+}
+while (choice !=8);
 }
 
-
-
-// Question 16: Odd number 1 to 15 using do-while
-void main (){
-int i =1;
-do {
-    if (i % 2 != 0) {
-        print (i);
-    }
-    i++;
-}
-while (i <= 15);
-}
-
-
-
-// Question 17: print all cities
-void main(){
-List<String> cities =[
-"Karachi",
-"Lahore",
-"Islamabad",
-"Peshawar",
-"Quetta",
-];
- for (String city in cities) {
-    print (city);
- }
-}
-  
-
-
-// Question 18: Table from 1 to 10
-void main(){
-print("Enter a number:");
-int number = int.parse(stdin.readLineSync()!);
-for (int i = 10; i >= 1; i--) {
-    print ("$number * $i = ${number * i}");
- }
-}
-
-
-
-// Question 19: Keep asking until user enter 0
-import 'dart:io';
-void main(){
-int number = 1;
-while (number != 0){
-    print("Enter a number:");
-      number = int.parse(stdin.readLineSync()!);
-  print("you entered:  $number");
-}
- print("Program ended.");
-}
-
-
-
-// Question 20: Print Prices with "Rs"
-void main (){
-List<double> prices = [100.0,250.0,500.0,750.0,1000.0,];
- for (double price in prices) {
-    print("Rs. $price");
- }
-}
 
